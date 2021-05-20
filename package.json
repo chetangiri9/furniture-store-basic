@@ -1,18 +1,18 @@
 {
-  "name": "react-template",
+  "name": "furniture-store-app",
   "version": "1.0.0",
-  "description": "A template react application",
+  "description": "A basic furniture store application",
   "repository": {
     "type": "git",
-    "url": "git://github.com/wednesday-solutions/react-template.git"
+    "url": "git://github.com/chetangiri9/furniture-store-basic.git"
   },
   "engines": {
     "npm": ">=5",
     "node": ">=8.15.1"
   },
-  "author": "Mac",
-  "homepage": "http://wednesday-solutions.github.io/react-template",
-  "license": "MIT",
+  "author": "Chetan Giri",
+  "homepage": "",
+  "license": "",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",

@@ -111,9 +111,9 @@ module.exports = require('./webpack.base.babel')({
     }),
 
     new WebpackPwaManifest({
-      name: 'React Template',
-      short_name: 'React T',
-      description: 'Wednesday React Template!',
+      name: 'Furniture Store App',
+      short_name: 'Furniture Store',
+      description: 'Furniture Store React App!',
       background_color: '#fafafa',
       theme_color: '#b1624d',
       inject: true,
