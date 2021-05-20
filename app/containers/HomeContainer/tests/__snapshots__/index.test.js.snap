@@ -4,10 +4,10 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
 <body>
   <div>
     <div
-      class="HomeContainer__StyledDiv-l0s8pp-9 iqJxHc"
+      class="HomeContainer__StyledDiv-sc-127ioxu-9 bovEAG"
     >
       <div
-        class="HomeContainer__TopRightContent-l0s8pp-8 dpTrUG"
+        class="HomeContainer__TopRightContent-sc-127ioxu-8 bVibYa"
       >
         <div
           class="ant-select ant-select-single ant-select-show-arrow"
@@ -70,7 +70,7 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
           </span>
         </div>
         <span
-          class="ant-input-group-wrapper ant-input-search HomeContainer__StyledInput-l0s8pp-7 bCssmc"
+          class="ant-input-group-wrapper ant-input-search HomeContainer__StyledInput-sc-127ioxu-7 dSKKsV"
         >
           <span
             class="ant-input-wrapper ant-input-group"
@@ -113,7 +113,7 @@ exports[`<HomeContainer /> tests should render and match the snapshot 1`] = `
         </span>
       </div>
       <main
-        class="ant-layout-content HomeContainer__Container-l0s8pp-0 iwVDnK"
+        class="ant-layout-content HomeContainer__Container-sc-127ioxu-0 heJpYx"
       />
     </div>
   </div>
