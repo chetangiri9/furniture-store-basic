@@ -94,8 +94,12 @@ export function HomeContainer({ intl, dispatchGetFurnitureList, furnitureList })
     dispatchGetFurnitureList();
   }, []);
 
+  useEffect(() => {
+    setSortedList(furnitureList);
+  }, [furnitureList]);
+
   const [sortByValue, setSortByValue] = useState('Sort By');
-  const [sortedList, setSortedList] = useState(furnitureList || []);
+  const [sortedList, setSortedList] = useState([]);
   const [searchText, setSearchText] = useState('');
 
   function handleChange(value) {
