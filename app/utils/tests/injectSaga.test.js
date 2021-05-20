@@ -72,19 +72,6 @@ describe('injectSaga decorator', () => {
     expect(ComponentWithSaga.displayName).toBe('withSaga(Component)');
     expect(injectSaga({ key: 'test', saga: testSaga })(() => null).displayName).toBe('withSaga(Component)');
   });
-
-  it('should propagate props', () => {
-    const props = { testProp: 'test' };
-    const renderedComponent = renderer.create(
-      <Provider store={store}>
-        <ComponentWithSaga {...props} />
-      </Provider>
-    );
-    const {
-      props: { children }
-    } = renderedComponent.getInstance();
-    expect(children.props).toEqual(props);
-  });
 });
 
 describe('useInjectSaga hook', () => {

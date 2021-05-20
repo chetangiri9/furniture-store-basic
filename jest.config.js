@@ -11,7 +11,6 @@ module.exports = {
     '!**/loadable.js',
     '!**/apiUtils.js',
     '!**/testUtils.js',
-    '!**/stories/**',
     '!**/themes/index.js'
   ],
   coverageThreshold: {

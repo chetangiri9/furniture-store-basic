@@ -1,19 +1,21 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
-import { getRepos } from '@services/repoApi';
+import { getFurnitureList } from '@services/repoApi';
 import { homeContainerTypes, homeContainerCreators } from './reducer';
 
-const { REQUEST_GET_GITHUB_REPOS } = homeContainerTypes;
-const { successGetGithubRepos, failureGetGithubRepos } = homeContainerCreators;
-export function* getGithubRepos(action) {
-  const response = yield call(getRepos, action.repoName);
+const { REQUEST_GET_FURNITURE_LIST } = homeContainerTypes;
+const { successGetFurnitureList, failureGetFurnitureList } = homeContainerCreators;
+
+export function* getFurnituresList(action) {
+  const response = yield call(getFurnitureList);
   const { data, ok } = response;
+
   if (ok) {
-    yield put(successGetGithubRepos(data));
+    yield put(successGetFurnitureList(data.items));
   } else {
-    yield put(failureGetGithubRepos(data));
+    yield put(failureGetFurnitureList(data));
   }
 }
-// Individual exports for testing
+
 export default function* homeContainerSaga() {
-  yield takeLatest(REQUEST_GET_GITHUB_REPOS, getGithubRepos);
+  yield takeLatest(REQUEST_GET_FURNITURE_LIST, getFurnituresList);
 }

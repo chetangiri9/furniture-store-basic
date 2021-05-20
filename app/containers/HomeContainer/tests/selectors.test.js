@@ -1,21 +1,18 @@
-import { selectHomeContainer, selectRepoName, selectReposData, selectReposError } from '../selectors';
+import { selectHomeContainer, selectFurnitureList, selectError } from '../selectors';
 
 describe('HomeContainer selector tests', () => {
   let mockedState;
-  let repoName;
-  let reposData;
-  let reposError;
+  let furnitureList;
+  let error;
 
   beforeEach(() => {
-    repoName = 'mac';
-    reposData = { totalCount: 1, items: [{ repoName }] };
-    reposError = 'There was some error while fetching the repository details';
+    furnitureList = { items: [] };
+    error = 'There was some error while fetching the repository details';
 
     mockedState = {
       homeContainer: {
-        repoName,
-        reposData,
-        reposError
+        furnitureList,
+        error
       }
     };
   });
@@ -23,18 +20,14 @@ describe('HomeContainer selector tests', () => {
     const homeContainerSelector = selectHomeContainer();
     expect(homeContainerSelector(mockedState)).toEqual(mockedState.homeContainer);
   });
-  it('should select the repoName', () => {
-    const repoSelector = selectRepoName();
-    expect(repoSelector(mockedState)).toEqual(repoName);
+
+  it('should select furnitureList', () => {
+    const furnitureListSelector = selectFurnitureList();
+    expect(furnitureListSelector(mockedState)).toEqual(furnitureList);
   });
 
-  it('should select reposData', () => {
-    const reposDataSelector = selectReposData();
-    expect(reposDataSelector(mockedState)).toEqual(reposData);
-  });
-
-  it('should select the reposError', () => {
-    const reposErrorSelector = selectReposError();
-    expect(reposErrorSelector(mockedState)).toEqual(reposError);
+  it('should select the error', () => {
+    const errorSelector = selectError();
+    expect(errorSelector(mockedState)).toEqual(error);
   });
 });

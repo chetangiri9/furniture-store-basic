@@ -8,27 +8,21 @@ import { createActions } from 'reduxsauce';
 import get from 'lodash/get';
 
 export const { Types: homeContainerTypes, Creators: homeContainerCreators } = createActions({
-  requestGetGithubRepos: ['repoName'],
-  successGetGithubRepos: ['data'],
-  failureGetGithubRepos: ['error'],
-  clearGithubRepos: []
+  requestGetFurnitureList: [],
+  successGetFurnitureList: ['data'],
+  failureGetFurnitureList: ['error']
 });
-export const initialState = { repoName: null, reposData: [], reposError: null };
+export const initialState = { furnitureList: [], error: null };
 
 /* eslint-disable default-case, no-param-reassign */
 export const homeContainerReducer = (state = initialState, action) =>
   produce(state, draft => {
     switch (action.type) {
-      case homeContainerTypes.REQUEST_GET_GITHUB_REPOS:
-        draft.repoName = action.repoName;
+      case homeContainerTypes.SUCCESS_GET_FURNITURE_LIST:
+        draft.furnitureList = action.data;
         break;
-      case homeContainerTypes.CLEAR_GITHUB_REPOS:
-        return initialState;
-      case homeContainerTypes.SUCCESS_GET_GITHUB_REPOS:
-        draft.reposData = action.data;
-        break;
-      case homeContainerTypes.FAILURE_GET_GITHUB_REPOS:
-        draft.reposError = get(action.error, 'message', 'something_went_wrong');
+      case homeContainerTypes.FAILURE_GET_FURNITURE_LIST:
+        draft.error = get(action.error, 'message', 'something_went_wrong');
         break;
     }
   });

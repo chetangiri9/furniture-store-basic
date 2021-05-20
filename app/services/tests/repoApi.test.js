@@ -1,19 +1,17 @@
 import MockAdapter from 'axios-mock-adapter';
 import { getApiClient } from '@utils/apiUtils';
-import { getRepos } from '../repoApi';
+import { getFurnitureList } from '../repoApi';
 
 describe('RepoApi tests', () => {
-  const repositoryName = 'mac';
   it('should make the api call to "/search/repositories?q="', async () => {
     const mock = new MockAdapter(getApiClient().axiosInstance);
     const data = [
       {
-        totalCount: 1,
-        items: [{ repositoryName }]
+        items: []
       }
     ];
-    mock.onGet(`/search/repositories?q=${repositoryName}`).reply(200, data);
-    const res = await getRepos(repositoryName);
+    mock.onGet(`/v3/68ab9cd1-33f7-4268-9bad-553864ae7047`).reply(200, data);
+    const res = await getFurnitureList();
     expect(res.data).toEqual(data);
   });
 });
